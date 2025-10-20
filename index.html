@@ -11,34 +11,50 @@
 
   <header>
     <nav class="navbar">
-        <ul class="nav-menu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#como-funciona">Cómo funciona</a></li>
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
 
-            <li class="logo-center">
-              <div class="logo-container">
-                  <a href="#inicio">
-                    <img src="img/logo.png" alt="Logo Gondoleando" class="logo" />
-                  </a>
-              </div>
-            </li>
+      
+        <li class="logo-center">
+          <div class="logo-container">
+            
+            <a href="#inicio" class="logo-desktop">
+              <img src="img/logo.png" alt="Logo Gondoleando" class="logo" />
+            </a>
+            
+            <a href="#inicio" class="logo-mobile">
+              <img src="img/logo-celu.png" alt="Logo Gondoleando Móvil" class="logo-celu" />
+            </a>
+          </div>
+        </li>
 
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#probarApp">Probar app</a></li>
-        </ul>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#comparacion">Compará ya</a></li>
+      </ul>
+
+      
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
+
   <section id="inicio" class="hero">
     <div class="phones">
-        <img src="img/Celulares.png" alt="App en celular" />
+        <img src="img/telefonos.png" alt="App en celular" />
     </div>
     <div class="hero-text">
         <h1>¡Ahorrá tiempo y dinero<br>en todas tus compras!</h1>
-        <p><em>Gondoleando</em> te ayuda a comparar precios de supermercados, armar listas inteligentes y encontrar las mejores ofertas cerca tuyo.</p>
+        <p><em>Gondoleando</em> te ayuda a comparar precios de supermercados, armar listas inteligentes y localizar sucursales cerca tuyo.</p>
         <div class="app-buttons">
-        <img src="img/playstore-appstore.png" alt="Descargar App" />
-        </div>
+        <a href="https://gondoleando-frontend.vercel.app" target="_blank" rel="noopener">
+          <button id="probarApp" class="btn-probar">¡Probala ahora!</button>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -88,7 +104,7 @@
       <div class="item-beneficio">
         <img src="img/descargar.png" alt="Descarga">
         <h3>Compartís tu lista</h3>
-        <p>Podés descargar la lista que armás y compartirla con otros fácilmente</p>
+        <p>Podés descargar y compartir la lista que armas fácilmente con otras personas</p>
       </div>
 
       <div class="item-beneficio">
@@ -106,45 +122,68 @@
       <div class="item-beneficio">
         <img src="img/ofertas.png" alt="Ofertas">
         <h3>Acceso a ofertas</h3>
-        <p>Accedé a promociones y descuentos disponibles en los supermercados</p>
+        <p>Accedé a promociones y descuentos disponibles en todos los supermercados</p>
       </div>
       
     </div>
   </section>
 
-  <section id="probarApp" class="registro">
-    <div class="registro-img">
-        <img src="img/Celular.png" alt="Celular mostrando app">
+  <section id="comparacion" class="comparacion">
+    <div class="comparacion-img">
+        <img src="img/comparacion.png" alt="Comparacion de productos">
     </div>
-    <div class="registro-texto">
-        <h2>¡Registrate en la aplicación!</h2>
+    <div class="comparacion-texto">
+        <h1>¡Comparar precios ahora es fácil!</h1>
         <p>
-        Accedé a Gondoleando desde tu celular y empezá a comparar precios con facilidad. Explorá productos, descubrí ofertas y armá  listas inteligentes con nosotros.
+        Con <em>Gondoleando</em>, comparar precios entre supermercados deja de ser complicado y se convierte en algo rápido, claro y pensado para tu ahorro. Ahora podés ver todas las opciones, elegir lo más conveniente y organizar tus compras sin esfuerzo ni confusiones. Porque ahorrar al comprar te da tranquilidad y control.
         </p>
-        <div class="boton-container">
-        <a href="https://gondoleando-frontend.vercel.app/" class="btn-probar" target="_blank" rel="noopener noreferrer">Probar aplicación</a>
-        </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-left">
-      <p><strong>Seguínos en las redes</strong></p>
-      <div class="social-icons">
-        <img src="img/instagram.png" alt="ig">
-        <img src="img/x.png" alt="x">
-        <img src="img/facebook.png" alt="fb">
-      </div>
-    </div>
-    <div class="footer-center">
-      <p><strong>© Gondoleando 2025</strong></p>
-    </div>
-    <div class="footer-right">
-      <p><strong>Descargá la app</strong></p>
-      <div class="footer-store">
-        <img src="img/playstore-appstore.png" alt="playstore-appstored">
-      </div>
-    </div>
-  </footer>
+  <footer class="footer">
+		<div class="footer-icons">
+			<a href="https://www.linkedin.com/in/bruno-surijon/" target="_blank" rel="noopener">
+			<img src="/img/linkedin.png" alt="LinkedIn">
+			</a>
+			<a 
+			href="https://mail.google.com/mail/?view=cm&fs=1&to=brunosurijon@gmail.com&su=Interesado%20en%20tu%20perfil&body=Hola%20Bruno,%0A%0AMe%20interesa%20tu%20trabajo..."
+			target="_blank" rel="noopener">
+			<img src="/img/gmail.png" alt="Email">
+			</a>
+		</div>
+
+		<p class="footer-text">Desarrollado por Bruno Surijón</p>
+
+		<div class="footer-icons">
+			<a href="https://www.instagram.com/brunosurijon_/" target="_blank" rel="noopener">
+			<img src="/img/instagram.png" alt="Instagram">
+			</a>
+			<a href="https://www.facebook.com/bruno.surijon.2025" target="_blank" rel="noopener">
+			<img src="/img/facebook.png" alt="Facebook">
+			</a>
+		</div>
+	</footer>
+
+  <script>
+  // Seleccionamos el botón hamburguesa y el menú
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  // Abrir/cerrar el menú al hacer clic en la hamburguesa
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMenu.classList.toggle('open');
+  });
+
+  // Cerrar el menú al hacer clic en cualquier enlace del menú
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      // Cierra el menú
+      hamburger.classList.remove('open');
+      navMenu.classList.remove('open');
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -8,6 +8,7 @@
 body {
   background: #ffffff;
   color: #0c2a59;
+  padding-top: 200px;
 }
 
 html {
@@ -19,11 +20,17 @@ html {
   justify-content: center;
   align-items: center;
   padding: 30px 0;
+  position: fixed;   
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; 
+  z-index: 1000;          
 }
 
 .nav-menu {
   display: flex;
-  gap: 80px; /* MÁS SEPARACIÓN ENTRE ITEMS */
+  gap: 80px;
   align-items: center;
   list-style: none;
   flex-wrap: wrap;
@@ -53,10 +60,15 @@ html {
   height: auto;
 }
 
-
 .logo-center {
   margin: 0 50px; 
 }
+
+.logo-mobile {
+  display: none;
+}
+
+
 
 .hero {
   display: flex;
@@ -65,7 +77,7 @@ html {
   padding: 30px 20px; 
   flex-wrap: wrap;
   gap: 10px; 
-  min-height: 75vh; 
+  min-height: 75vh;
 }
 
 .hero-text h1 {
@@ -76,35 +88,52 @@ html {
 
 .hero-text p {
   font-size: 1.2rem; 
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-top: 30px;
   max-width: 500px; 
 }
 
-.app-buttons img {
-  width: 100%;
-  max-width: 400px; 
-  height: auto;
+.btn-probar {
+  background-color: #112d55;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 300px;
 }
+
+.btn-probar:hover {
+  background-color: #193f7e;
+}
+
 
 
 .como-funciona {
   text-align: center;
-  padding: 40px 40px 80px; /* menos padding arriba, igual abajo */
+  padding: 40px 40px 80px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .como-funciona h2 {
-  margin-bottom: 50px; /* más margen entre título y pasos */
+  position: static;
+  transform: none;
+  text-align: center;
+  margin-bottom: 70px;
 }
 
 .pasos {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 60px;
-  margin-top: 0; /* lo dejo en 0 porque ya el h2 tiene margen abajo */
+  margin: 2 auto;
+  max-width: 1100px; 
 }
 
 .paso {
@@ -121,7 +150,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 25px; /* más margen abajo del círculo para separar de número */
+  margin: 0 auto 25px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+
+.paso .img-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(12, 42, 89, 0.3); 
+  background-color: #112d55;
+  cursor: pointer; 
 }
 
 .paso .img-container img {
@@ -129,15 +167,13 @@ html {
   height: 100%;
   object-fit: contain;
   display: block;
-  border-radius: 0;
-  padding: 0;
 }
 
 .numero {
   font-size: 1.8rem;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 20px; /* un poco más de espacio entre número y descripción */
+  margin-bottom: 20px; 
 }
 
 .descripcion {
@@ -147,26 +183,36 @@ html {
 }
 
 
+
 .beneficios {
   text-align: center;
-  padding: 40px 40px 60px; /* menos padding arriba, mismo padding abajo */
+  padding: 40px 40px 60px;
 }
 
 .beneficios h2 {
-  margin-bottom: 50px; /* más separación del título respecto a las cards */
+  margin-bottom: 70px;
 }
 
 .grid-beneficios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas en pantallas grandes */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-top: 0; /* controlado desde h2 */
+  margin-top: 0;
 }
 
 .item-beneficio {
   border: 1px solid #0c2a59;
-  padding: 20px;
+  padding: 35px 20px; 
   border-radius: 10px;
+  min-height: 180px; 
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-beneficio:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+  cursor: pointer;
 }
 
 .item-beneficio img {
@@ -179,94 +225,387 @@ html {
   margin-bottom: 10px;
 }
 
-.registro {
+
+
+
+.comparacion {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start; /* clave para que se alineen arriba */
-  padding: 80px 40px;
-  flex-wrap: wrap;
-  gap: 100px;
-  font-family: 'Poppins', sans-serif;
+  padding: 25px 5% 80px; 
   max-width: 1400px;
   margin: 0 auto;
-  width: 100%;
 }
 
-.registro-img {
+.comparacion-img {
   display: flex;
-  align-items: flex-start; /* aseguramos que la imagen se alinee arriba */
+  justify-content: flex-end;
+  transform: translateX(-40px); 
 }
 
-.registro-img img {
-  max-width: 170px;
+.comparacion-img img {
+  max-width: 490px; 
   height: auto;
 }
 
-.registro-texto {
-  flex: 1 1 400px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
+.comparacion-texto {
+  text-align: left;
+  color: #112d55;
+  margin-top: 30px;
 }
 
-.registro-texto h2 {
-  font-size: 2rem;
+.comparacion-texto h1 {
+  font-size: 2.4rem;
   font-weight: 700;
   color: #112d55;
-  margin-bottom: 20px;
-  text-align: left;
+  margin-bottom: 25px;
+  line-height: 1.4;
 }
 
-.registro-texto p {
-  margin-bottom: 40px;
-  margin-top: 25px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: left;
+.comparacion-texto p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #112d55;
+  max-width: 650px; 
 }
 
-.boton-container {
+
+.footer {
   display: flex;
-  justify-content: start;
-  width: 100%;
-}
-
-.btn-probar {
-  background-color: #112d55;
-  color: white;
-  padding: 16px 32px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-probar:hover {
-  background-color: #0b1e3a;
-}
-
-
-
-footer {
-  display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 30px 20px;
+  gap: 3rem;
   background-color: #f9f9f9;
-  text-align: center;
-  font-size: 0.9rem;
+  color: #112d55;
+  padding: 1.5rem 0;
+  font-family: sans-serif;
 }
 
-.footer-store img {
-  width: 160px;
-  margin: 5px;
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.social-icons img {
-  width: 40px;
-  margin: 5px;
+.footer img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.footer a:hover img {
+  transform: translateY(-4px);
+}
+
+.footer-text {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; 
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  body {
+    box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: border-box; 
+  }
+
+  section, .beneficios, .comparacion, .como-funciona, .hero {
+    padding: 40px 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .nav-menu li:not(.logo-center) {
+    display: none;
+  }
+
+  .nav-menu.open ~ .logo-mobile,
+  .nav-menu.open .logo-center {
+    display: none !important;
+  }
+
+  .nav-menu.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0ecec;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* que arranque desde arriba */
+    align-items: flex-start;
+    padding: 100px 0 0 40px; /* deja espacio arriba para la X */
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-menu.open li:not(.logo-center) {
+    display: block;
+    margin: 4px 0; 
+  }
+
+  .nav-menu.open a {
+    color: #0b1e3b;
+    font-weight: 700;
+    font-size: 1.1rem; 
+    text-decoration: none;
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+
+  .logo-center {
+    order: 1;
+    margin: 0;
+  }
+
+  .logo-celu {
+    width: 92px;
+    height: auto;
+    margin-right: 50px;
+  }
+
+  .hamburger {
+    display: block;
+    order: 2;
+    width: 40px;          
+    height: 45px;         
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 50px;    
+    z-index: 1100;
+  }
+
+  
+  .hamburger span {
+    position: absolute;
+    width: 100%;           
+    height: 4px;           
+    background-color: #112d55;
+    transition: 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 14px; }
+  .hamburger span:nth-child(3) { top: 28px; }
+
+  
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 14px;
+    width: 25px;   
+    height: 3px;   
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 14px;
+    width: 25px;   
+    height: 3px;   
+  }
+
+  
+  .nav-menu.open ~ .hamburger,
+  .hamburger.open {
+    position: fixed;
+    top: 25px;       
+    right: 25px;     
+    margin-left: 0;  
+    z-index: 1200;   
+    width: 40px;     
+    height: 45px;    
+  }
+
+
+
+  
+  .hero {
+    padding-top: 2px;   
+    padding-bottom: 40px; 
+  }
+
+  
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .btn-probar {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+  }
+
+  .phones img {
+    max-width: 470px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  /* Como funciona */
+  .como-funciona h2 {
+    margin-bottom: 45px;
+  }
+
+  .pasos {
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  .paso {
+    max-width: 100%;
+  }
+
+  .paso .img-container {
+    transform: none !important;
+  }
+
+  /* Beneficios */ 
+  .beneficios h2 { 
+    margin-bottom: 45px; 
+  } 
+
+  .grid-beneficios { 
+    grid-template-columns: 1fr; 
+    width: 100%;
+  } 
+
+  .item-beneficio { 
+    padding: 25px 10px;
+    min-height: auto; 
+    transform: none !important;
+    width: 100%;
+  }
+
+  .item-beneficio h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: 14px; 
+  } 
+
+  .item-beneficio p { 
+    font-size: 0.9rem; 
+    margin-left: 10px; 
+    text-align: left; 
+  }
+
+  /* Comparación */
+  .comparacion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; 
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 0; 
+    padding-top: 0;
+  }
+
+  .comparacion-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 0; 
+    width: 100%;
+  }
+
+  .comparacion-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .comparacion-texto {
+    max-width: 100%;
+  }
+
+  .comparacion-texto h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px; 
+    text-align: center;
+  }
+
+  .comparacion-texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+
+  /* Footer */
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .footer-icons a img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-icons a:hover img {
+    transform: none !important;
+  }
+
+  .footer-text {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    order: 3;
+  }
 }
 
